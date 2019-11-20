@@ -54,15 +54,12 @@ func (etl *ETL) Run() {
 
 func process(ctx context.Context, ch <-chan []*services.Person, wg *sync.WaitGroup) {
 	defer wg.Done()
-	println("... process")
-
 	for {
 		select {
 		case data := <-ch:
 			for _, d := range data {
-				fmt.Printf("data: %v %v %v\n", d.ID, d.UID, d.Phone)
+				fmt.Printf("data: %v %v %v\n", d.ID, d.Phone, d.NickName)
 			}
-
 		case <-time.After(time.Second):
 			fmt.Println("Break time")
 		case <-ctx.Done():

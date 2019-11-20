@@ -15,7 +15,7 @@ type Person struct {
 }
 
 func (person *Person) GetAll() (*sqlx.Rows, error) {
-	rows, err := db.Queryx(`SELECT id, uid, phone, "createdAt", "nickName" FROM primary_user_user ORDER BY id`)
+	rows, err := db.Queryx(`SELECT id, phone, "createdAt", "nickName" FROM primary_user_user ORDER BY id`)
 	if err != nil {
 		return nil, err
 	}

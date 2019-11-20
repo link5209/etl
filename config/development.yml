@@ -1,0 +1,6 @@
+db:
+  host     : "10.8.8.120"
+  port     : 5432
+  user     : "postgres"
+  password : "7to12pg94"
+  dbname   : "mydb"
